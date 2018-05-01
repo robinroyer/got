@@ -1,12 +1,12 @@
 {
-  "name": "electron-quick-start",
+  "name": "got",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "got",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/robinroyer/got",
   "keywords": [
     "Electron",
     "quick",
@@ -14,9 +14,14 @@
     "tutorial",
     "demo"
   ],
-  "author": "GitHub",
+  "author": "robinroyer",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^1.8.4"
+    "electron": "^1.8.6"
+  },
+   "scripts": {
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --prune=true --out=release-builds",
+    "package-win": "electron-packager . got --overwrite --asar=true --platform=win32 --arch=ia32  --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Electron Tutorial App\"",    
+    "package-linux": "electron-packager . got --overwrite --asar=true --platform=linux --arch=x64  --prune=true --out=release-builds"
   }
 }
